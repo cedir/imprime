@@ -28,6 +28,7 @@ Partial Class frmScreenCapture
         Me.GUARDARIMAGENToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.BorrarCapturaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -44,17 +45,17 @@ Partial Class frmScreenCapture
         '
         Me.PictureBox1.Location = New System.Drawing.Point(190, 37)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(540, 440)
+        Me.PictureBox1.Size = New System.Drawing.Size(580, 447)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PantallaToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PantallaToolStripMenuItem, Me.BorrarCapturaToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(742, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(782, 24)
         Me.MenuStrip1.TabIndex = 2
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -88,11 +89,17 @@ Partial Class frmScreenCapture
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 1500
         '
+        'BorrarCapturaToolStripMenuItem
+        '
+        Me.BorrarCapturaToolStripMenuItem.Name = "BorrarCapturaToolStripMenuItem"
+        Me.BorrarCapturaToolStripMenuItem.Size = New System.Drawing.Size(94, 20)
+        Me.BorrarCapturaToolStripMenuItem.Text = "borrar capturas"
+        '
         'frmScreenCapture
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(742, 489)
+        Me.ClientSize = New System.Drawing.Size(782, 496)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.MenuStrip1)
@@ -114,5 +121,6 @@ Partial Class frmScreenCapture
     Friend WithEvents GUARDARIMAGENToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents NotifyIcon1 As System.Windows.Forms.NotifyIcon
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
+    Friend WithEvents BorrarCapturaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

@@ -20,42 +20,23 @@ Partial Class frmScreenCapture
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
-        Me.ListBox1 = New System.Windows.Forms.ListBox
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip
         Me.PantallaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.CapturarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.GUARDARIMAGENToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.BorrarCapturaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
+        Me.ListView1 = New System.Windows.Forms.ListView
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'ListBox1
-        '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(12, 37)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(172, 186)
-        Me.ListBox1.TabIndex = 0
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(190, 37)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(580, 447)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
         '
         'MenuStrip1
         '
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PantallaToolStripMenuItem, Me.BorrarCapturaToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(782, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(561, 24)
         Me.MenuStrip1.TabIndex = 2
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -79,48 +60,58 @@ Partial Class frmScreenCapture
         Me.GUARDARIMAGENToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
         Me.GUARDARIMAGENToolStripMenuItem.Text = "GUARDAR IMAGEN"
         '
-        'NotifyIcon1
-        '
-        Me.NotifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info
-        Me.NotifyIcon1.Text = "NotifyIcon1"
-        '
-        'Timer1
-        '
-        Me.Timer1.Enabled = True
-        Me.Timer1.Interval = 1500
-        '
         'BorrarCapturaToolStripMenuItem
         '
         Me.BorrarCapturaToolStripMenuItem.Name = "BorrarCapturaToolStripMenuItem"
         Me.BorrarCapturaToolStripMenuItem.Size = New System.Drawing.Size(94, 20)
         Me.BorrarCapturaToolStripMenuItem.Text = "borrar capturas"
         '
+        'NotifyIcon1
+        '
+        Me.NotifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        Me.NotifyIcon1.Text = "NotifyIcon1"
+        '
+        'ImageList1
+        '
+        Me.ImageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit
+        Me.ImageList1.ImageSize = New System.Drawing.Size(5, 5)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.White
+        '
+        'ListView1
+        '
+        Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ListView1.GridLines = True
+        Me.ListView1.LargeImageList = Me.ImageList1
+        Me.ListView1.Location = New System.Drawing.Point(0, 24)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(561, 500)
+        Me.ListView1.TabIndex = 3
+        Me.ListView1.UseCompatibleStateImageBehavior = False
+        '
         'frmScreenCapture
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(782, 496)
-        Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.ListBox1)
+        Me.AutoSize = True
+        Me.ClientSize = New System.Drawing.Size(561, 524)
+        Me.Controls.Add(Me.ListView1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frmScreenCapture"
         Me.Text = "Capturador de Imágenes"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents ListBox1 As System.Windows.Forms.ListBox
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents PantallaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CapturarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents GUARDARIMAGENToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents NotifyIcon1 As System.Windows.Forms.NotifyIcon
-    Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents BorrarCapturaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
+    Friend WithEvents ListView1 As System.Windows.Forms.ListView
 
 End Class

@@ -25,6 +25,9 @@ Public Class ControladorAvisoSonoro
     '        'My.Computer.Audio.Play("C:\IMPRESION\Fin Impresion.wav")
     '    End If
     ' End Sub
+
+    'vamos a utilizar un metodo que no se ejectute con timer, y de esta manera, evitar un uso excesivo de 
+    'recursos. 
     Public Sub emitirSonido(ByVal nro As Integer)
         If nro = 3 Then
             For i As Integer = 0 To 3

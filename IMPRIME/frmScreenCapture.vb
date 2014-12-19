@@ -8,6 +8,8 @@ Public Class frmScreenCapture
     Private m_Manejador As New ManejadorDeInterfaz
     Public Const KEY_ALT As Integer = &H1
     Public Const _HOTKEY As Integer = &H312
+
+    Private imagenes As New List(Of Drawing.Bitmap)
 #End Region
 
 #Region "Eventos"
@@ -15,9 +17,6 @@ Public Class frmScreenCapture
         Application.DoEvents()
         RegisterHotKey(Me.Handle, 1, Nothing, Keys.F11)
         RegisterHotKey(Me.Handle, 2, KEY_ALT, Keys.Snapshot)
-    End Sub
-    Private Sub TimerEventProcessor(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        m_Manejador.emitirSonido(Me.ImageList1.Images.Count)
     End Sub
     Private Sub CapturarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CapturarToolStripMenuItem.Click
         capturarPantalla()
@@ -36,22 +35,42 @@ Public Class frmScreenCapture
 #Region "Metodos de Instancia"
 
     Private Sub capturarPantalla()
-        If Me.ListView1.Items.Count < 4 Then
-            Dim area As Rectangle
-            Dim capture As System.Drawing.Bitmap
-            Dim graph As Graphics
-            area = Screen.PrimaryScreen.Bounds
-            capture = New System.Drawing.Bitmap(area.Width, area.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb)
-            graph = Graphics.FromImage(capture)
-            graph.CopyFromScreen(area.X, area.Y, 0, 0, area.Size, CopyPixelOperation.SourceCopy)
 
-            ImageList1.Images.Add(capture)
-            ListView1.Items.Add(ImageList1.Images.Count.ToString(), ImageList1.Images.Count - 1)
-            m_Manejador.emitirSonido(Me.ImageList1.Images.Count)
-        End If
+        Select Case True
+            Case Me.imagenes.Count < 4
+
+                'Dim area As Rectangle
+                'Dim capture As System.Drawing.Bitmap
+                'Dim graph As Graphics
+                'area = Screen.PrimaryScreen.Bounds
+                'capture = New System.Drawing.Bitmap(area.Width, area.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb)
+                'graph = Graphics.FromImage(capture)
+                'graph.CopyFromScreen(area.X, area.Y, 0, 0, area.Size, CopyPixelOperation.SourceCopy)
+                'ImageList1.Images.Add(capture)
+                'imagenes.Add(capture)
+
+                'ListView1.Items.Add(imagenes.Count.ToString(), imagenes.Count - 1)
+
+
+                'm_Manejador.emitirSonido(Me.imagenes.Count)
+                Dim screenshot As Size = New Size(My.Computer.Screen.Bounds.Width, My.Computer.Screen.Bounds.Height)
+                Dim screengrab As New Bitmap(My.Computer.Screen.Bounds.Width, My.Computer.Screen.Bounds.Height)
+                Dim g As System.Drawing.Graphics = System.Drawing.Graphics.FromImage(screengrab)
+                g.CopyFromScreen(New Point(0, 0), New Point(0, 0), screenshot)
+                ImageList1.Images.Add(screengrab)
+                imagenes.Add(screengrab)
+                ListView1.Items.Add(imagenes.Count.ToString(), imagenes.Count - 1)
+                m_Manejador.emitirSonido(Me.imagenes.Count)
+
+            Case Me.imagenes.Count = 4
+                Me.guardarCapturaDePantalla()
+        End Select
+
+       
     End Sub
     Private Sub guardarCapturaDePantalla()
-        m_Manejador.capturarPantalla(Me.ImageList1.Images)
+        m_Manejador.guardarCapturaPantalla(imagenes)
+        MessageBox.Show("se ha guardado imagen en disco")
 
     End Sub
     <Runtime.InteropServices.DllImport("User32.dll")> _
@@ -76,7 +95,8 @@ Public Class frmScreenCapture
 #End Region
    
     Private Sub BorrarCapturaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BorrarCapturaToolStripMenuItem.Click
-        ImageList1.Images.Clear()
+        'ImageList1.Images.Clear()
+        imagenes.Clear()
         Me.ListView1.Items.Clear()
     End Sub
 

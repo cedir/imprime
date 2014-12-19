@@ -3,9 +3,13 @@ Public Class ManejadorDeInterfaz
     Dim controladorSonido As New ControladorAvisoSonoro
     Dim controladorImagenes As New ControladorCapturaDeImagenes
 
-    Public Sub capturarPantalla(ByVal l As ImageList.ImageCollection)
-        controladorImagenes.guardarImagenEnDisco()
-    End Sub
+    Public Function guardarCapturaPantalla(ByVal lista As List(Of Drawing.Bitmap)) As Boolean
+
+        If Not controladorImagenes.guardarCapturaEnDisco(lista) Then
+            Return False
+        End If
+        Return True
+    End Function
     Public Sub emitirSonido(ByVal nroImagenes)
         controladorSonido.emitirSonido(nroImagenes)
     End Sub

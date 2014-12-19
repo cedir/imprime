@@ -36,7 +36,7 @@ Partial Class frmScreenCapture
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PantallaToolStripMenuItem, Me.BorrarCapturaToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(561, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(550, 24)
         Me.MenuStrip1.TabIndex = 2
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -83,8 +83,9 @@ Partial Class frmScreenCapture
         Me.ListView1.GridLines = True
         Me.ListView1.LargeImageList = Me.ImageList1
         Me.ListView1.Location = New System.Drawing.Point(0, 24)
+        Me.ListView1.Margin = New System.Windows.Forms.Padding(1)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(561, 500)
+        Me.ListView1.Size = New System.Drawing.Size(550, 471)
         Me.ListView1.TabIndex = 3
         Me.ListView1.UseCompatibleStateImageBehavior = False
         '
@@ -93,7 +94,7 @@ Partial Class frmScreenCapture
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(561, 524)
+        Me.ClientSize = New System.Drawing.Size(550, 495)
         Me.Controls.Add(Me.ListView1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1

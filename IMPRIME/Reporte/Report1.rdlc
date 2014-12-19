@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <InteractiveHeight>29.7cm</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="ImagePath">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_0</Prompt>
+    </ReportParameter>
+  </ReportParameters>
   <rd:DrawGrid>true</rd:DrawGrid>
   <InteractiveWidth>21cm</InteractiveWidth>
   <rd:GridSpacing>0.25cm</rd:GridSpacing>
@@ -14,48 +22,16 @@
   <Body>
     <ColumnSpacing>1cm</ColumnSpacing>
     <ReportItems>
-      <Image Name="image4">
-        <Sizing>AutoSize</Sizing>
-        <Top>5cm</Top>
-        <Width>3.25cm</Width>
-        <Source>External</Source>
-        <Style />
-        <ZIndex>3</ZIndex>
-        <Left>9.25cm</Left>
-        <Height>3cm</Height>
-        <Value />
-      </Image>
-      <Image Name="image3">
-        <Sizing>AutoSize</Sizing>
-        <Top>5cm</Top>
-        <Width>3.25cm</Width>
-        <Source>External</Source>
-        <Style />
-        <ZIndex>2</ZIndex>
-        <Left>2.25cm</Left>
-        <Height>3cm</Height>
-        <Value />
-      </Image>
-      <Image Name="image2">
-        <Sizing>AutoSize</Sizing>
-        <Top>0.5cm</Top>
-        <Width>3.25cm</Width>
-        <Source>External</Source>
-        <Style />
-        <ZIndex>1</ZIndex>
-        <Left>9.25cm</Left>
-        <Height>3cm</Height>
-        <Value />
-      </Image>
       <Image Name="image1">
         <Sizing>AutoSize</Sizing>
-        <Top>0.25cm</Top>
-        <Width>3.25cm</Width>
+        <ToolTip>capturas</ToolTip>
+        <Top>0.5cm</Top>
+        <Width>5.5cm</Width>
         <Source>External</Source>
         <Style />
-        <Left>2.25cm</Left>
-        <Height>3cm</Height>
-        <Value />
+        <Left>1.25cm</Left>
+        <Height>5.5cm</Height>
+        <Value>=Parameters!ImagePath.Value</Value>
       </Image>
     </ReportItems>
     <Height>13.5cm</Height>

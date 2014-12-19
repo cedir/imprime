@@ -28,15 +28,17 @@ Partial Class frmScreenCapture
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.ListView1 = New System.Windows.Forms.ListView
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer
+        Me.ImprimirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PantallaToolStripMenuItem, Me.BorrarCapturaToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PantallaToolStripMenuItem, Me.BorrarCapturaToolStripMenuItem, Me.ImprimirToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(550, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(899, 24)
         Me.MenuStrip1.TabIndex = 2
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -79,7 +81,6 @@ Partial Class frmScreenCapture
         '
         'ListView1
         '
-        Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListView1.GridLines = True
         Me.ListView1.LargeImageList = Me.ImageList1
         Me.ListView1.Location = New System.Drawing.Point(0, 24)
@@ -89,12 +90,27 @@ Partial Class frmScreenCapture
         Me.ListView1.TabIndex = 3
         Me.ListView1.UseCompatibleStateImageBehavior = False
         '
+        'ReportViewer1
+        '
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "IMPRIME.Report1.rdlc"
+        Me.ReportViewer1.Location = New System.Drawing.Point(554, 27)
+        Me.ReportViewer1.Name = "ReportViewer1"
+        Me.ReportViewer1.Size = New System.Drawing.Size(345, 468)
+        Me.ReportViewer1.TabIndex = 4
+        '
+        'ImprimirToolStripMenuItem
+        '
+        Me.ImprimirToolStripMenuItem.Name = "ImprimirToolStripMenuItem"
+        Me.ImprimirToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
+        Me.ImprimirToolStripMenuItem.Text = "Imprimir"
+        '
         'frmScreenCapture
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(550, 495)
+        Me.ClientSize = New System.Drawing.Size(899, 496)
+        Me.Controls.Add(Me.ReportViewer1)
         Me.Controls.Add(Me.ListView1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
@@ -114,5 +130,7 @@ Partial Class frmScreenCapture
     Friend WithEvents BorrarCapturaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
     Friend WithEvents ListView1 As System.Windows.Forms.ListView
+    Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents ImprimirToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

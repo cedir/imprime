@@ -2,6 +2,7 @@ Imports System
 Imports System.Drawing
 Imports System.ComponentModel
 Imports System.Windows.Forms
+Imports Microsoft.Reporting.WinForms
 Public Class frmScreenCapture
 
 #Region "Variables de Instancia"
@@ -17,6 +18,7 @@ Public Class frmScreenCapture
         Application.DoEvents()
         RegisterHotKey(Me.Handle, 1, Nothing, Keys.F11)
         RegisterHotKey(Me.Handle, 2, KEY_ALT, Keys.Snapshot)
+        Me.ReportViewer1.RefreshReport()
     End Sub
     Private Sub CapturarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CapturarToolStripMenuItem.Click
         capturarPantalla()
@@ -104,6 +106,20 @@ Public Class frmScreenCapture
         ' Llamada necesaria para el Diseñador de Windows Forms.
         InitializeComponent()
         ImageList1.ImageSize = New Size(200, 200)
+
+    End Sub
+
+    Private Sub ImprimirToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ImprimirToolStripMenuItem.Click
+        imprimir()
+    End Sub
+    Public Sub imprimir()
+        ReportViewer1.LocalReport.ReportPath = ("~/Report1.rdlc")
+        ReportViewer1.LocalReport.EnableExternalImages = True
+        Dim imagePath As String = ("d:\rodo.bmp")
+        Dim parameter As New ReportParameter("ImagePath", imagePath)
+
+        ReportViewer1.LocalReport.SetParameters(parameter)
+        ReportViewer1.LocalReport.Refresh()
 
     End Sub
 End Class

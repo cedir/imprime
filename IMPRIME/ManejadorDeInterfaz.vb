@@ -1,10 +1,10 @@
 Imports CapaDeNegocios
+Imports Microsoft.Reporting.WinForms
 Public Class ManejadorDeInterfaz
     Dim controladorSonido As New ControladorAvisoSonoro
     Dim controladorImagenes As New ControladorCapturaDeImagenes
 
     Public Function guardarCapturaPantalla(ByVal lista As List(Of Drawing.Bitmap)) As Boolean
-
         If Not controladorImagenes.guardarCapturaEnDisco(lista) Then
             Return False
         End If
@@ -13,4 +13,5 @@ Public Class ManejadorDeInterfaz
     Public Sub emitirSonido(ByVal nroImagenes)
         controladorSonido.emitirSonido(nroImagenes)
     End Sub
+    
 End Class

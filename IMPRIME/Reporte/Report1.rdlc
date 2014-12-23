@@ -2,7 +2,7 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <InteractiveHeight>29.7cm</InteractiveHeight>
   <ReportParameters>
-    <ReportParameter Name="ImagePath">
+    <ReportParameter Name="parametroPath">
       <DataType>String</DataType>
       <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
@@ -22,7 +22,23 @@
   <Body>
     <ColumnSpacing>1cm</ColumnSpacing>
     <ReportItems>
-      <Image Name="image1">
+      <Textbox Name="textbox1">
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Top>1.5cm</Top>
+        <Width>2.53968cm</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>11.5cm</Left>
+        <Height>0.63492cm</Height>
+        <Value />
+      </Textbox>
+      <Image Name="imagen1">
         <Sizing>AutoSize</Sizing>
         <ToolTip>capturas</ToolTip>
         <Top>0.5cm</Top>
@@ -31,7 +47,7 @@
         <Style />
         <Left>1.25cm</Left>
         <Height>5.5cm</Height>
-        <Value>=Parameters!ImagePath.Value</Value>
+        <Value />
       </Image>
     </ReportItems>
     <Height>13.5cm</Height>

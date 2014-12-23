@@ -115,11 +115,18 @@ Public Class frmScreenCapture
     Public Sub imprimir()
         ReportViewer1.LocalReport.ReportPath = ("~/Report1.rdlc")
         ReportViewer1.LocalReport.EnableExternalImages = True
+        Me.ReportViewer1.ProcessingMode = ProcessingMode.Local
         Dim imagePath As String = ("d:\rodo.bmp")
-        Dim parameter As New ReportParameter("ImagePath", imagePath)
 
-        ReportViewer1.LocalReport.SetParameters(parameter)
-        ReportViewer1.LocalReport.Refresh()
+        Dim Param1 As New ReportParameter
+        Param1.Name = "parametroPath" '*** The actual name of the parameter in the report ***
+        Param1.Values.Add(imagePath)
+        ReportViewer1.LocalReport.SetParameters(New ReportParameter() {Param1})
+
+
+
+        ReportViewer1.Refresh()
 
     End Sub
+
 End Class

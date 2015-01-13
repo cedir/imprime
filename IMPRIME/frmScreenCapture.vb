@@ -39,21 +39,6 @@ Public Class frmScreenCapture
 
         Select Case True
             Case Me.imagenes.Count < 4
-
-                'Dim area As Rectangle
-                'Dim capture As System.Drawing.Bitmap
-                'Dim graph As Graphics
-                'area = Screen.PrimaryScreen.Bounds
-                'capture = New System.Drawing.Bitmap(area.Width, area.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb)
-                'graph = Graphics.FromImage(capture)
-                'graph.CopyFromScreen(area.X, area.Y, 0, 0, area.Size, CopyPixelOperation.SourceCopy)
-                'ImageList1.Images.Add(capture)
-                'imagenes.Add(capture)
-
-                'ListView1.Items.Add(imagenes.Count.ToString(), imagenes.Count - 1)
-
-
-                'm_Manejador.emitirSonido(Me.imagenes.Count)
                 Dim screenshot As Size = New Size(My.Computer.Screen.Bounds.Width, My.Computer.Screen.Bounds.Height)
                 Dim screengrab As New Bitmap(My.Computer.Screen.Bounds.Width, My.Computer.Screen.Bounds.Height)
                 Dim g As System.Drawing.Graphics = System.Drawing.Graphics.FromImage(screengrab)
@@ -114,15 +99,26 @@ Public Class frmScreenCapture
     Public Sub imprimir()
         Dim r As New reportViewer
 
-        'r.ReportViewer1.LocalReport.ReportPath = ("D:\GITHUB REPOS\imprime\IMPRIME\Reporte\Report1.rdlc")
         ReportViewer1.LocalReport.EnableExternalImages = True
         ReportViewer1.ProcessingMode = ProcessingMode.Local
         Dim imagePath As String = ("d:\Test.bmp")
 
         Dim Param1 As New ReportParameter
+        Dim Param2 As New ReportParameter
+        Dim Param3 As New ReportParameter
+        Dim Param4 As New ReportParameter
+
         Param1.Name = "pathImagen1" ' nombre del parametro del report
+        Param2.Name = "pathImagen2" ' nombre del parametro del report
+        Param3.Name = "pathImagen3" ' nombre del parametro del report
+        Param4.Name = "pathImagen4" ' nombre del parametro del report
+
         Param1.Values.Add("file:///" + imagePath)
-        ReportViewer1.LocalReport.SetParameters(New ReportParameter() {Param1})
+        Param2.Values.Add("file:///" + imagePath)
+        Param3.Values.Add("file:///" + imagePath)
+        Param4.Values.Add("file:///" + imagePath)
+
+        ReportViewer1.LocalReport.SetParameters(New ReportParameter() {Param1, Param2, Param3, Param4})
         ReportViewer1.RefreshReport()
 
 

@@ -11,13 +11,14 @@ Public Class ControladorCapturaDeImagenes
 
         Dim path As String = "d:\" + fecha
         Try
+
             Dim di As DirectoryInfo = Directory.CreateDirectory(path)
             For Each i As Drawing.Bitmap In lista
                 StoreImage(i)
                 i.Save(path, ImageFormat.Bmp)
             Next
 
-            Return True
+             Return True
 
         Catch e As Exception
             Return False
@@ -29,10 +30,10 @@ Public Class ControladorCapturaDeImagenes
     Private Function StoreImage(ByVal bm As Drawing.Bitmap) As Object
 
         Dim ms As New MemoryStream
-
         Try
 
             bm.Save(ms, ImageFormat.Bmp)
+
 
             Return ms.GetBuffer
 

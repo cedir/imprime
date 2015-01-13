@@ -18,7 +18,6 @@ Public Class frmScreenCapture
         Application.DoEvents()
         RegisterHotKey(Me.Handle, 1, Nothing, Keys.F11)
         RegisterHotKey(Me.Handle, 2, KEY_ALT, Keys.Snapshot)
-        Me.ReportViewer1.RefreshReport()
     End Sub
     Private Sub CapturarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CapturarToolStripMenuItem.Click
         capturarPantalla()
@@ -113,20 +112,19 @@ Public Class frmScreenCapture
         imprimir()
     End Sub
     Public Sub imprimir()
-        ReportViewer1.LocalReport.ReportPath = ("~/Report1.rdlc")
+        Dim r As New reportViewer
+
+        'r.ReportViewer1.LocalReport.ReportPath = ("D:\GITHUB REPOS\imprime\IMPRIME\Reporte\Report1.rdlc")
         ReportViewer1.LocalReport.EnableExternalImages = True
-        Me.ReportViewer1.ProcessingMode = ProcessingMode.Local
-        Dim imagePath As String = ("d:\rodo.bmp")
+        ReportViewer1.ProcessingMode = ProcessingMode.Local
+        Dim imagePath As String = ("d:\Test.bmp")
 
         Dim Param1 As New ReportParameter
-        Param1.Name = "parametroPath" '*** The actual name of the parameter in the report ***
-        Param1.Values.Add(imagePath)
+        Param1.Name = "pathImagen1" ' nombre del parametro del report
+        Param1.Values.Add("file:///" + imagePath)
         ReportViewer1.LocalReport.SetParameters(New ReportParameter() {Param1})
+        ReportViewer1.RefreshReport()
 
-
-
-        ReportViewer1.Refresh()
 
     End Sub
-
 End Class

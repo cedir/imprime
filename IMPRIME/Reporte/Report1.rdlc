@@ -2,11 +2,26 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <InteractiveHeight>29.7cm</InteractiveHeight>
   <ReportParameters>
-    <ReportParameter Name="parametroPath">
+    <ReportParameter Name="pathImagen1">
       <DataType>String</DataType>
       <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
       <Prompt>Report_Parameter_0</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="pathImagen2">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="pathImagen3">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_2</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="pathImagen4">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_3</Prompt>
     </ReportParameter>
   </ReportParameters>
   <rd:DrawGrid>true</rd:DrawGrid>
@@ -22,32 +37,52 @@
   <Body>
     <ColumnSpacing>1cm</ColumnSpacing>
     <ReportItems>
-      <Textbox Name="textbox1">
-        <rd:DefaultName>textbox1</rd:DefaultName>
-        <Top>1.5cm</Top>
-        <Width>2.53968cm</Width>
-        <Style>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-        <ZIndex>1</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>11.5cm</Left>
-        <Height>0.63492cm</Height>
-        <Value />
-      </Textbox>
-      <Image Name="imagen1">
-        <Sizing>AutoSize</Sizing>
+      <Image Name="imagen4">
+        <Sizing>FitProportional</Sizing>
         <ToolTip>capturas</ToolTip>
-        <Top>0.5cm</Top>
-        <Width>5.5cm</Width>
+        <Top>7.25cm</Top>
+        <Width>5.25cm</Width>
+        <Source>External</Source>
+        <Style />
+        <ZIndex>3</ZIndex>
+        <Left>9.25cm</Left>
+        <Height>5cm</Height>
+        <Value>=Parameters!pathImagen4.Value</Value>
+      </Image>
+      <Image Name="imagen3">
+        <Sizing>FitProportional</Sizing>
+        <ToolTip>capturas</ToolTip>
+        <Top>7.25cm</Top>
+        <Width>5.25cm</Width>
+        <Source>External</Source>
+        <Style />
+        <ZIndex>2</ZIndex>
+        <Left>1.25cm</Left>
+        <Height>5cm</Height>
+        <Value>=Parameters!pathImagen3.Value</Value>
+      </Image>
+      <Image Name="imagen2">
+        <Sizing>FitProportional</Sizing>
+        <ToolTip>capturas</ToolTip>
+        <Top>1.75cm</Top>
+        <Width>5.25cm</Width>
+        <Source>External</Source>
+        <Style />
+        <ZIndex>1</ZIndex>
+        <Left>9.25cm</Left>
+        <Height>5cm</Height>
+        <Value>=Parameters!pathImagen2.Value</Value>
+      </Image>
+      <Image Name="imagen1">
+        <Sizing>FitProportional</Sizing>
+        <ToolTip>capturas</ToolTip>
+        <Top>1.75cm</Top>
+        <Width>5.25cm</Width>
         <Source>External</Source>
         <Style />
         <Left>1.25cm</Left>
-        <Height>5.5cm</Height>
-        <Value />
+        <Height>5cm</Height>
+        <Value>Parameters!pathImagen1.Value</Value>
       </Image>
     </ReportItems>
     <Height>13.5cm</Height>

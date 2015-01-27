@@ -37,6 +37,7 @@ Public Class Reporte
 
     End Sub
     Public Function guardar() As Boolean
+
         Dim di As DirectoryInfo = Directory.CreateDirectory(Me.pathLocation)
 
         Try
@@ -46,14 +47,14 @@ Public Class Reporte
             Next
             Return True
 
-        Catch e As Exception
+        Catch ex As Exception
             'logueo del error de escritura en disco
-            logError()
+            Dim eH As New errorHandler
+            eH.logError(ex)
+
             Return False
-
-        Finally
-
         End Try
+
     End Function
     Private Function storeImage(ByVal img As Imagen) As Object
         Dim ms As New MemoryStream
@@ -66,9 +67,5 @@ Public Class Reporte
             ms = Nothing
         End Try
     End Function
-    Private Sub logError()
-        Dim errH As New errorHandler
-        errH.logError()
-    End Sub
 
 End Class

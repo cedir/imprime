@@ -94,13 +94,17 @@ Public Class frmScreenCapture
         Dim g As System.Drawing.Graphics = System.Drawing.Graphics.FromImage(screengrab)
         g.CopyFromScreen(New Point(0, 0), New Point(0, 0), screenshot)
         ImageList1.Images.Add(screengrab)
-
-        Dim imagen As New Imagen
-        imagen.imagen = screengrab
-        imagen.nombre = (controladorCaptura.reporte.listaImagenes.Count() + 1).ToString()
-        controladorCaptura.reporte.listaImagenes.Add(imagen)
-
-        ListView1.Items.Add(controladorCaptura.reporte.listaImagenes.Count.ToString(), controladorCaptura.reporte.listaImagenes.Count - 1)
+        Try
+            Dim imagen As New Imagen
+            imagen.imagen = screengrab
+            imagen.nombre = (controladorCaptura.reporte.listaImagenes.Count() + 1).ToString()
+            controladorCaptura.reporte.listaImagenes.Add(imagen)
+            ListView1.Items.Add(controladorCaptura.reporte.listaImagenes.Count.ToString(), controladorCaptura.reporte.listaImagenes.Count - 1)
+        Catch ex As Exception
+            Dim eH As New errorHandler
+            eH.logError(ex)
+        End Try
+       
     End Sub
     Private Sub guardarCapturaDePantalla()
         controladorCaptura.guardarCapturaEnDisco()

@@ -20,3 +20,14 @@ D:\GITHUB REPOS\CapturadorPantallas\Imprime\obj\Release\Imprime.vbproj.GenerateR
 D:\GITHUB REPOS\CapturadorPantallas\Imprime\obj\Release\Imprime.exe
 D:\GITHUB REPOS\CapturadorPantallas\Imprime\obj\Release\Imprime.xml
 D:\GITHUB REPOS\CapturadorPantallas\Imprime\obj\Release\Imprime.pdb
+D:\GITHUB REPOS\imprime\obj\Debug\Imprime.exe
+D:\GITHUB REPOS\imprime\obj\Debug\Imprime.xml
+D:\GITHUB REPOS\imprime\obj\Debug\Imprime.pdb
+D:\GITHUB REPOS\imprime\bin\Debug\Imprime.exe
+D:\GITHUB REPOS\imprime\bin\Debug\Imprime.pdb
+D:\GITHUB REPOS\imprime\bin\Debug\Imprime.xml
+D:\GITHUB REPOS\imprime\obj\Debug\ResolveAssemblyReference.cache
+D:\GITHUB REPOS\imprime\obj\Debug\Imprime.report.rpt
+D:\GITHUB REPOS\imprime\obj\Debug\Imprime.Resources.resources
+D:\GITHUB REPOS\imprime\obj\Debug\Imprime.frmScreenCapture.resources
+D:\GITHUB REPOS\imprime\obj\Debug\Imprime.vbproj.GenerateResource.Cache

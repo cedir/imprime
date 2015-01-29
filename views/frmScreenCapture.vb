@@ -25,6 +25,7 @@ Public Class frmScreenCapture
 #Region "Eventos"
 
     Private Sub frmScreenCapture_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        cerrarSegundaInstanciaDeAplicacion()
         Me.Visible = False
         Me.ntyCapturadorPantalla.Visible = True
         Me.ShowInTaskbar = True
@@ -117,6 +118,17 @@ Public Class frmScreenCapture
         Dim controlador As New ControladorImpresora
         controlador.imprimirImagenes(Me.controladorCaptura.reporte)
     End Sub
+    Private Sub cerrarSegundaInstanciaDeAplicacion()
+        Dim procesos() As Process
+        procesos = Process.GetProcessesByName(Application.ProductName.ToString)
+        If (procesos.Length <= 1) Then
+            ' Continuamos.
+        Else 'Hay más de un proceso ejecutandose
+            MessageBox.Show("Ya se está ejecutando el programa en otra ventana.La aplicacion se cerrará")
+            Application.Exit()
+        End If
+    End Sub
+    
 #End Region
 
     Private Sub ntyCapturadorPantalla_MouseDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles ntyCapturadorPantalla.MouseDoubleClick

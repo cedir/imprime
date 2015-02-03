@@ -63,21 +63,18 @@ Public Class frmScreenCapture
     End Function
     Protected Overrides Sub WndProc(ByRef m As System.Windows.Forms.Message)
         If m.Msg = _HOTKEY Then
+            'creamos una espera, para que se ignoren otros procesos 
             SyncLock Me
+
                 Dim id As IntPtr = m.WParam
                 Select Case (id.ToString)
                     Case "1"
-
-                        'creamos una espera, para que se ignoren otros procesos 
-                        My.Computer.Audio.Play("C:\Windows\Media\ding.wav", AudioPlayMode.WaitToComplete)
                         Me.guardadoEnListaDeCapturaPantalla()
-                   
-
                     Case "2"
                         MessageBox.Show("APRETASTE SNAPSHIT")
                 End Select
-            End SyncLock
 
+            End SyncLock
         End If
         MyBase.WndProc(m)
     End Sub

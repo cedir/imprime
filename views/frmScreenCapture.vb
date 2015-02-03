@@ -3,6 +3,7 @@ Imports System.Drawing
 Imports System.ComponentModel
 Imports System.Windows.Forms
 
+
 Public Class frmScreenCapture
 
     Public Sub New()
@@ -63,13 +64,18 @@ Public Class frmScreenCapture
     End Function
     Protected Overrides Sub WndProc(ByRef m As System.Windows.Forms.Message)
         If m.Msg = _HOTKEY Then
-            Dim id As IntPtr = m.WParam
-            Select Case (id.ToString)
-                Case "1"
-                    Me.guardadoEnListaDeCapturaPantalla()
-                Case "2"
-                    MessageBox.Show("APRETASTE SNAPSHIT")
-            End Select
+            'creamos una espera, para que se ignoren otros procesos 
+            SyncLock Me
+
+                Dim id As IntPtr = m.WParam
+                Select Case (id.ToString)
+                    Case "1"
+                        Me.guardadoEnListaDeCapturaPantalla()
+                    Case "2"
+                        MessageBox.Show("APRETASTE SNAPSHIT")
+                End Select
+
+            End SyncLock
         End If
         MyBase.WndProc(m)
     End Sub
@@ -78,15 +84,22 @@ Public Class frmScreenCapture
 #Region "Metodos de Instancia"
 
     Private Sub guardadoEnListaDeCapturaPantalla()
-        capturarPantalla()
-        Select Case True
-            Case Me.controladorCaptura.reporte.listaImagenes.Count = 3
-                controladorAvisoSonoro.EmitirSonido(controladorCaptura.reporte)
-            Case controladorCaptura.reporte.listaImagenes.Count = 4
-                Me.guardarCapturaDePantalla()
-                imprimir()
-                reiniciarCapturas()
-        End Select
+
+        If Me.controladorCaptura.reporte.listaImagenes.Count < 4 Then
+            capturarPantalla()
+            Select Case True
+                Case Me.controladorCaptura.reporte.listaImagenes.Count = 3
+                    controladorAvisoSonoro.EmitirSonido(controladorCaptura.reporte)
+                Case controladorCaptura.reporte.listaImagenes.Count = 4
+                    'aca vamos a bloquear el proceso, para que se guarden imagenes en disco, y luego se continue
+
+                    Me.guardarCapturaDePantalla()
+                    imprimir()
+                    reiniciarCapturas()
+
+
+            End Select
+        End If
 
     End Sub
     Private Sub capturarPantalla()

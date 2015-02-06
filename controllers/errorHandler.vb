@@ -15,11 +15,7 @@ Public Class errorHandler
         End Set
     End Property
 
-    Public Function logError(ByVal ex As Exception) As String
-        Return ex.Message
-    End Function
-
-    Private Sub catchErrorToFile()
+    Public Sub logError(ByVal ex As Exception)
         Dim path As String = "c:\ErrorCapturaImagenes.txt"
 
         Using sw As StreamWriter = New StreamWriter(path, True)
@@ -35,5 +31,7 @@ Public Class errorHandler
 
 
     End Sub
+
+   
 
 End Class

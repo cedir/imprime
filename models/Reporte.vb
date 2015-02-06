@@ -33,7 +33,7 @@ Public Class Reporte
         fecha = fecha.Replace("/", "-")
         fecha = fecha.Replace(":", "-")
 
-        m_pathLocation = "d:\" + fecha + "\"
+        m_pathLocation = "z:\" + fecha + "\" 'prueba de directorio inexistente
 
     End Sub
     Public Function guardar() As Boolean

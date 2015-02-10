@@ -87,18 +87,12 @@ Public Class frmScreenCapture
 
         If Me.controladorCaptura.reporte.listaImagenes.Count < 4 Then
             capturarPantalla()
-            Select Case True
-                Case Me.controladorCaptura.reporte.listaImagenes.Count = 3
-                    controladorAvisoSonoro.EmitirSonido(controladorCaptura.reporte)
-                Case controladorCaptura.reporte.listaImagenes.Count = 4
-                    'aca vamos a bloquear el proceso, para que se guarden imagenes en disco, y luego se continue
-
-                    Me.guardarCapturaDePantalla()
-                    imprimir()
-                    reiniciarCapturas()
-
-
-            End Select
+            controladorAvisoSonoro.EmitirSonido(controladorCaptura.reporte)
+            If controladorCaptura.reporte.listaImagenes.Count = 4 Then
+                Me.guardarCapturaDePantalla()
+                imprimir()
+                reiniciarCapturas()
+            End If
         End If
 
     End Sub

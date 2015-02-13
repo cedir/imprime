@@ -1,6 +1,7 @@
 Public Class ControladorImpresora
 
-    Public Sub imprimirImagenes(ByVal reporte As Reporte)
+    Public Function imprimirImagenes(ByVal reporte As Reporte) As Boolean
+
 
         Dim rp As New report
         Try
@@ -10,11 +11,13 @@ Public Class ControladorImpresora
             rp.PrintToPrinter(1, False, 0, 0)
         Catch ex As Exception
             'error de nombre de archivo
-            MessageBox.Show("no se ha podido imprimir, debido a que la imagen no fue guardada.")
+            Dim err As New errorHandler
+            err.logError(ex, Me.ToString)
+            Return False
         Finally
             rp = Nothing
         End Try
 
 
-    End Sub
+    End Function
 End Class

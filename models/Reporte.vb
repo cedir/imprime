@@ -33,7 +33,7 @@ Public Class Reporte
         fecha = fecha.Replace("/", "-")
         fecha = fecha.Replace(":", "-")
 
-        m_pathLocation = "z:\" + fecha + "\" 'prueba de directorio inexistente
+        m_pathLocation = "c:\" + fecha + "\" 'prueba de directorio inexistente
 
     End Sub
     Public Function guardar() As Boolean
@@ -49,9 +49,8 @@ Public Class Reporte
 
         Catch ex As Exception
             'logueo del error de escritura en disco
-            Dim eH As New errorHandler
-            eH.logError(ex)
-
+            Dim err As New errorHandler
+            err.logError(ex, Me.ToString)
             Return False
         End Try
 

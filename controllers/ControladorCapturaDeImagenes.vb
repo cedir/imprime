@@ -14,7 +14,8 @@ Public Class ControladorCapturaDeImagenes
             reporte.guardar()
         Catch ex As Exception
             'loguear por que no se recupero del error
-            MessageBox.Show(ex.Message)
+            Dim err As New errorHandler
+            err.logError(ex, "Error en ControladorImagenes, metodo guardarCapturaEnDisco " & Me.ToString())
             Return False
         End Try
     End Function

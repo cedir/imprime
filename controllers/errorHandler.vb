@@ -4,36 +4,26 @@ Imports System.Text
 
 
 Public Class errorHandler
+    Const path As String = "c:\ErrorCapturaImagenes.txt"
 
-    Private m_ex As Exception
-    Public Property ex() As Exception
-        Get
-            Return m_ex
-        End Get
-        Set(ByVal value As Exception)
-            m_ex = value
-        End Set
-    End Property
-
-    Public Function logError(ByVal ex As Exception) As String
-        Return ex.Message
-    End Function
-
-    Private Sub catchErrorToFile()
-        Dim path As String = "c:\ErrorCapturaImagenes.txt"
+    Public Sub logError(ByVal exeption As Exception, Optional ByVal mensajesAdicionales As String = "")
 
         Using sw As StreamWriter = New StreamWriter(path, True)
             sw.WriteLine("-------------------")
             sw.Write("Fecha ...: ")
             sw.WriteLine(DateTime.Now)
             sw.Write("Mensaje de error ...: ")
-            sw.WriteLine(ex.Message())
+            sw.WriteLine(exeption.Message())
+            If mensajesAdicionales <> "" Then
+                sw.Write("Mensajes adicionales.: ")
+                sw.WriteLine(mensajesAdicionales)
+            End If
             sw.WriteLine("-------------------")
             sw.Close()
 
         End Using
-
-
     End Sub
 
+    Public Sub New()
+    End Sub
 End Class

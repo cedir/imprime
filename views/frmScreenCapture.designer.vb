@@ -85,6 +85,7 @@ Partial Class frmScreenCapture
         Me.ClientSize = New System.Drawing.Size(549, 497)
         Me.Controls.Add(Me.ListView1)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frmScreenCapture"
         Me.Text = "Capturador de Imágenes"

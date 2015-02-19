@@ -5,6 +5,7 @@ Public Class Reporte
 
     Private m_lista As New List(Of Imagen)
     Private m_pathLocation As String
+    Const PATH_CAPTURA = "d:\CAPTURAS\"
 
     Public Property listaImagenes() As List(Of Imagen)
         Get
@@ -33,7 +34,7 @@ Public Class Reporte
         fecha = fecha.Replace("/", "-")
         fecha = fecha.Replace(":", "-")
 
-        m_pathLocation = "d:\" + fecha + "\"
+        m_pathLocation = PATH_CAPTURA + fecha + "\"
 
     End Sub
     Public Function guardar() As Boolean

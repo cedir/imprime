@@ -10,16 +10,9 @@ Public Class ControladorAvisoSonoro
         Select Case True
 
             Case reporte.listaImagenes.Count = 3
-                My.Computer.Audio.Play(ubicacionSonidoTercerCaptura, AudioPlayMode.WaitToComplete)
-            Case reporte.listaImagenes.Count = 4
-                Dim i As Integer = 0
-                Do Until i = 3
-                    My.Computer.Audio.Play(ubicacionSonidoCuartaCaptura, AudioPlayMode.WaitToComplete)
-                    i = i + 1
-                Loop
+                My.Computer.Audio.Play(ubicacionSonidoTercerCaptura, AudioPlayMode.Background)
             Case Else
-                My.Computer.Audio.Play(ubicacionSonidoCaptura, AudioPlayMode.WaitToComplete)
-
+                My.Computer.Audio.Play(ubicacionSonidoCaptura, AudioPlayMode.Background)
         End Select
 
     End Sub

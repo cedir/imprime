@@ -1,6 +1,6 @@
 Public Class ControladorAvisoSonoro
 
-    Const ubicacionSonidoCaptura = "C:\Windows\Media\Elemento emergente bloqueado de Windows XP.wav"
+    Const ubicacionSonidoCaptura = "D:\CEDIR CAPTURADOR\ding.wav"
     Const ubicacionSonidoTercerCaptura = "C:\Windows\Media\Impresión completa de Windows XP.wav"
     Const ubicacionSonidoCuartaCaptura = "C:\Windows\Media\Notificación de Windows XP.wav"
 

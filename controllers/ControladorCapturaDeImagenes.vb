@@ -20,10 +20,10 @@ Public Class ControladorCapturaDeImagenes
     End Function
     Public Sub reiniciarCapturas()
         crearNuevoReporte()
-
     End Sub
 
     Private Sub crearNuevoReporte()
+        Me.reporte = Nothing
         Me.reporte = New Reporte
     End Sub
 

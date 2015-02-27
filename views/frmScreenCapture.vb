@@ -119,6 +119,7 @@ Public Class frmScreenCapture
     End Sub
     Private Sub reiniciarCapturas()
         controladorCaptura.reiniciarCapturas()
+        ImageList1.Images.Clear()
         Me.ListView1.Items.Clear()
     End Sub
     Private Sub imprimir()
@@ -141,5 +142,9 @@ Public Class frmScreenCapture
     Private Sub ntyCapturadorPantalla_MouseDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles ntyCapturadorPantalla.MouseDoubleClick
         Me.Visible = True
         Me.SetTopLevel(True)
+    End Sub
+
+    Private Sub BorrarCapturasToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BorrarCapturasToolStripMenuItem.Click
+        reiniciarCapturas()
     End Sub
 End Class

@@ -20,8 +20,12 @@ Debemos instalar en las maquinas cliente, desde un proyecto setup.
 ¿Por que es esto?
 Debido a que cr xi no viene mas integrado con visual studio a partir de la version 2008, tenemos que incluir en un proyecto setup, los merge modules necesarios para que se instalen las librerias necesarias en las maquinas cliente, y de este modo, poder ver los reportes sin problemas. 
 
+los nuevos archivos mege modules estan dispondibles en mega
+https://mega.co.nz/#fm/KQgEBS6K
+Carpeta: sistemas y soporte it>desarrollo>intranet>cr xi merge modules
 
-1 - 
+ Se deben agregar al proyecto de instalacion , una vez compilado el proyecto.
+
 
 
 

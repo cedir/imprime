@@ -10,9 +10,9 @@ Public Class ControladorAvisoSonoro
         Select Case True
 
             Case reporte.listaImagenes.Count = 3
-                My.Computer.Audio.Play(ubicacionSonidoTercerCaptura, AudioPlayMode.Background)
+                ' My.Computer.Audio.Play(ubicacionSonidoTercerCaptura, AudioPlayMode.Background)
             Case Else
-                My.Computer.Audio.Play(ubicacionSonidoCaptura, AudioPlayMode.Background)
+                ' My.Computer.Audio.Play(ubicacionSonidoCaptura, AudioPlayMode.Background)
         End Select
 
     End Sub

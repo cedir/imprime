@@ -29,7 +29,16 @@ Carpeta: sistemas y soporte it>desarrollo>intranet>cr xi merge modules
 
 Respecto a la estructura que debe existir en la pc: 
 al momento de instalar el programa, se utilizan archivos de sonido predeterminados de windows xp . 
-ademas, se debe tener en pc una particion d:\capturas. 
+
+Ademas, se debe tener en pc una particion "D:\CAPTURAS\".
+Crear  "D:\CEDIR CAPTURADOR\ding.wav", y guardar aqui el paquete instalador, para futuro uso
+
+
+
+
+
+
+
 
 
 

@@ -5,7 +5,7 @@ Public Class Reporte
 
     Private m_lista As New List(Of Imagen)
     Private m_pathLocation As String
-    Const PATH_CAPTURA = "d:\CAPTURAS\"
+    Const PATH_CAPTURA = "D:\CAPTURAS\"
 
     Public Property listaImagenes() As List(Of Imagen)
         Get

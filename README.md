@@ -27,5 +27,10 @@ Carpeta: sistemas y soporte it>desarrollo>intranet>cr xi merge modules
  Se deben agregar al proyecto de instalacion , una vez compilado el proyecto.
 
 
+Respecto a la estructura que debe existir en la pc: 
+al momento de instalar el programa, se utilizan archivos de sonido predeterminados de windows xp . 
+ademas, se debe tener en pc una particion d:\capturas. 
+
+
 
 

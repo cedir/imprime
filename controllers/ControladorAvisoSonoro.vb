@@ -1,18 +1,20 @@
+Imports system
+Imports Imprime.My.Resources
+
+
 Public Class ControladorAvisoSonoro
 
-    Const ubicacionSonidoCaptura = "D:\CEDIR CAPTURADOR\ding.wav"
-    Const ubicacionSonidoTercerCaptura = "C:\Windows\Media\Impresión completa de Windows XP.wav"
-    Const ubicacionSonidoCuartaCaptura = "C:\Windows\Media\Notificación de Windows XP.wav"
+
+    Const SONIDO_CAPTURA = "\ding.wav"
+    Const SONIDO_IMPRESIONCOMPLETA = "\Impresión completa de Windows XP.wav"
 
 
     Public Sub EmitirSonido(ByVal reporte As Reporte)
-
         Select Case True
-
             Case reporte.listaImagenes.Count = 3
-                My.Computer.Audio.Play(ubicacionSonidoTercerCaptura, AudioPlayMode.Background)
+                My.Computer.Audio.Play(My.Settings.pathSonidoCapturas & SONIDO_IMPRESIONCOMPLETA, AudioPlayMode.Background)
             Case Else
-                My.Computer.Audio.Play(ubicacionSonidoCaptura, AudioPlayMode.Background)
+                My.Computer.Audio.Play(My.Settings.pathSonidoCapturas & SONIDO_CAPTURA, AudioPlayMode.Background)
         End Select
 
     End Sub

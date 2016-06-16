@@ -1,8 +1,9 @@
+Imports CrystalDecisions.CrystalReports.Engine
+
 Public Class ControladorImpresora
 
-    Public Sub imprimirImagenes(ByVal reporte As Reporte)
-
-        Dim rp As New report
+    Public Shared Sub ImprimirImagenes(ByVal reporte As Reporte)
+        Dim rp As ReportClass = reporte.ClaseReporte()
         Try
             For Each img As Imagen In reporte.listaImagenes
                 rp.SetParameterValue(img.nombre, img.path)
@@ -14,7 +15,5 @@ Public Class ControladorImpresora
         Finally
             rp = Nothing
         End Try
-
-
     End Sub
 End Class

@@ -1,11 +1,11 @@
 Imports System.IO
 Imports System.Drawing.Imaging
+Imports CrystalDecisions.CrystalReports.Engine
 
 Public Class Reporte
-
+    Private m_imagenes As Integer
     Private m_lista As New List(Of Imagen)
     Private m_pathLocation As String
-    'Const PATH_CAPTURA = "D:\CAPTURAS\"
 
     Public Property listaImagenes() As List(Of Imagen)
         Get
@@ -23,10 +23,18 @@ Public Class Reporte
             m_pathLocation = value
         End Set
     End Property
-    Public Sub New()
+    Public Property imagenes() As Integer
+        Get
+            Return m_imagenes
+        End Get
+        Private Set(ByVal value As Integer)
+            m_imagenes = value
+        End Set
+    End Property
+    Public Sub New(imagenes As Integer)
         Me.listaImagenes = New List(Of Imagen)
-        setPath()
-
+        Me.imagenes = imagenes
+        Me.setPath()
     End Sub
     Private Sub setPath()
         Dim fecha As String = Date.Now.ToString()
@@ -35,28 +43,35 @@ Public Class Reporte
         fecha = fecha.Replace(":", "-")
 
         m_pathLocation = My.Settings.pathCapturas + fecha + "\"
-
     End Sub
+
+    Public Function ClaseReporte() As ReportClass
+        If Me.imagenes = 6 Then
+            Return New report_6
+        End If
+        Return New report_4
+    End Function
+
     Public Function guardar() As Boolean
-
         Dim di As DirectoryInfo = Directory.CreateDirectory(Me.pathLocation)
-
         Try
             For Each img As Imagen In listaImagenes
                 storeImage(img)
                 img.guardar(Me.pathLocation)
             Next
             Return True
-
         Catch ex As Exception
             'logueo del error de escritura en disco
             Dim eH As New errorHandler
             eH.logError(ex)
-
             Return False
         End Try
-
     End Function
+
+    Friend Function Completo() As Boolean
+        Return Me.listaImagenes.Count >= Me.imagenes
+    End Function
+
     Private Function storeImage(ByVal img As Imagen) As Object
         Dim ms As New MemoryStream
         Try

@@ -75,14 +75,14 @@ Partial Class frmScreenCapture
         '
         'Opcion4
         '
-        Me.Opcion4.Checked = True
-        Me.Opcion4.CheckState = System.Windows.Forms.CheckState.Checked
         Me.Opcion4.Name = "Opcion4"
         Me.Opcion4.Size = New System.Drawing.Size(211, 30)
         Me.Opcion4.Text = "4"
         '
         'Opcion6
         '
+        Me.Opcion6.Checked = True
+        Me.Opcion6.CheckState = System.Windows.Forms.CheckState.Checked
         Me.Opcion6.Name = "Opcion6"
         Me.Opcion6.Size = New System.Drawing.Size(211, 30)
         Me.Opcion6.Text = "6"

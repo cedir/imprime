@@ -10,7 +10,7 @@ Public Class frmScreenCapture
         ' Llamada necesaria para el Diseñador de Windows Forms.
         InitializeComponent()
         ImageList1.ImageSize = New Size(200, 200)
-        Me.controladorCaptura = New ControladorCapturaDeImagenes(4)
+        Me.controladorCaptura = New ControladorCapturaDeImagenes(6)
     End Sub
 
 #Region "Variables de Instancia"

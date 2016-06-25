@@ -72,7 +72,7 @@ Public Class ControladorCapturaDeImagenes
             Dim imagen As Imagen = NuevaCaptura()
 
             ui.AgregaImagen(imagen)
-            ControladorAvisoSonoro.EmitirSonido(Me.reporte.Completo)
+            ControladorAvisoSonoro.EmitirSonido(Me.reporte.Advertir)
             If Me.reporte.Completo Then
                 Me.GuardarCapturaEnDisco()
                 ControladorImpresora.ImprimirImagenes(Me.reporte)

@@ -68,6 +68,10 @@ Public Class Reporte
         End Try
     End Function
 
+    Friend Function Advertir() As Boolean
+        Return Me.listaImagenes.Count = Me.imagenes - 1
+    End Function
+
     Friend Function Completo() As Boolean
         Return Me.listaImagenes.Count >= Me.imagenes
     End Function

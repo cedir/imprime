@@ -9,14 +9,15 @@ Public Class ControladorAvisoSonoro
     Const SONIDO_IMPRESIONCOMPLETA = "\Impresión completa de Windows XP.wav"
 
 
-    Public Sub EmitirSonido(ByVal reporte As Reporte)
-        Select Case True
-            Case reporte.listaImagenes.Count = 3
+    Public Shared Sub EmitirSonido(ByVal advertir As Boolean)
+        If advertir Then
+            If IO.File.Exists(My.Settings.pathSonidoCapturas & SONIDO_IMPRESIONCOMPLETA) Then
                 My.Computer.Audio.Play(My.Settings.pathSonidoCapturas & SONIDO_IMPRESIONCOMPLETA, AudioPlayMode.Background)
-            Case Else
+            End If
+        Else
+            If IO.File.Exists(My.Settings.pathSonidoCapturas & SONIDO_CAPTURA) Then
                 My.Computer.Audio.Play(My.Settings.pathSonidoCapturas & SONIDO_CAPTURA, AudioPlayMode.Background)
-        End Select
-
+            End If
+        End If
     End Sub
-
 End Class

@@ -2,6 +2,7 @@ Public Class Imagen
 
     Dim m_nombre As String
     Dim m_path As String
+    Dim m_indice As Integer
     Dim m_imagen As System.Drawing.Bitmap
     Dim m_extension As String
 
@@ -11,6 +12,14 @@ Public Class Imagen
         End Get
         Set(ByVal value As String)
             m_path = value
+        End Set
+    End Property
+    Public Property indice() As Integer
+        Get
+            Return m_indice
+        End Get
+        Set(ByVal value As Integer)
+            m_indice = value
         End Set
     End Property
     Public Property nombre() As String

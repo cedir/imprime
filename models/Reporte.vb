@@ -72,6 +72,12 @@ Public Class Reporte
         Return Me.listaImagenes.Count = Me.imagenes - 1
     End Function
 
+    Friend Sub BorrarUltimaImagen()
+        If Me.listaImagenes.Count > 0 Then
+            Me.listaImagenes.RemoveAt(Me.listaImagenes.Count - 1)
+        End If
+    End Sub
+
     Friend Function Completo() As Boolean
         Return Me.listaImagenes.Count >= Me.imagenes
     End Function

@@ -34,11 +34,9 @@ Public Class frmScreenCapture
     Private Sub CapturarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CapturarToolStripMenuItem.Click
         Me.controladorCaptura.Procesar(Me)
     End Sub
-    Private Sub GUARDARIMAGENToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
-    End Sub
-    Private Sub ImprimirToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
+    Private Sub BorrarÚltimaCapturaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BorrarÚltimaCapturaToolStripMenuItem.Click
+        Me.controladorCaptura.BorrarUltimaCaptura(Me)
     End Sub
 
     Private Sub BorrarCapturasToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BorrarCapturasToolStripMenuItem.Click
@@ -97,6 +95,15 @@ Public Class frmScreenCapture
         ListView1.Items.Add(imagen.nombre, imagen.indice - 1)
     End Sub
 
+    Public Sub BorrarUltimaImagen()
+        If ImageList1.Images.Count > 0 Then
+            ImageList1.Images.RemoveAt(ImageList1.Images.Count - 1)
+        End If
+        If ListView1.Items.Count > 0 Then
+            ListView1.Items.RemoveAt(ListView1.Items.Count - 1)
+        End If
+    End Sub
+
     Public Sub BorrarTodo()
         Me.ImageList1.Images.Clear()
         Me.ListView1.Items.Clear()
@@ -119,5 +126,4 @@ Public Class frmScreenCapture
         Me.Visible = True
         Me.SetTopLevel(True)
     End Sub
-
 End Class

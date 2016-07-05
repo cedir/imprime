@@ -32,6 +32,7 @@ Partial Class frmScreenCapture
         Me.ntyCapturadorPantalla = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.BorrarÚltimaCapturaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -49,7 +50,7 @@ Partial Class frmScreenCapture
         '
         'PantallaToolStripMenuItem
         '
-        Me.PantallaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CapturarToolStripMenuItem, Me.ToolStripSeparator1, Me.ImágenesToolStripMenuItem, Me.BorrarCapturasToolStripMenuItem})
+        Me.PantallaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CapturarToolStripMenuItem, Me.ToolStripSeparator1, Me.ImágenesToolStripMenuItem, Me.BorrarCapturasToolStripMenuItem, Me.BorrarÚltimaCapturaToolStripMenuItem})
         Me.PantallaToolStripMenuItem.Name = "PantallaToolStripMenuItem"
         Me.PantallaToolStripMenuItem.Size = New System.Drawing.Size(178, 29)
         Me.PantallaToolStripMenuItem.Text = "Captura de pantalla"
@@ -58,25 +59,25 @@ Partial Class frmScreenCapture
         '
         Me.CapturarToolStripMenuItem.Name = "CapturarToolStripMenuItem"
         Me.CapturarToolStripMenuItem.ShortcutKeyDisplayString = "F11"
-        Me.CapturarToolStripMenuItem.Size = New System.Drawing.Size(220, 30)
+        Me.CapturarToolStripMenuItem.Size = New System.Drawing.Size(266, 30)
         Me.CapturarToolStripMenuItem.Text = "Capturar"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(217, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(263, 6)
         '
         'ImágenesToolStripMenuItem
         '
         Me.ImágenesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Opcion4, Me.Opcion6})
         Me.ImágenesToolStripMenuItem.Name = "ImágenesToolStripMenuItem"
-        Me.ImágenesToolStripMenuItem.Size = New System.Drawing.Size(220, 30)
+        Me.ImágenesToolStripMenuItem.Size = New System.Drawing.Size(266, 30)
         Me.ImágenesToolStripMenuItem.Text = "Imágenes"
         '
         'Opcion4
         '
         Me.Opcion4.Name = "Opcion4"
-        Me.Opcion4.Size = New System.Drawing.Size(211, 30)
+        Me.Opcion4.Size = New System.Drawing.Size(107, 30)
         Me.Opcion4.Text = "4"
         '
         'Opcion6
@@ -84,13 +85,13 @@ Partial Class frmScreenCapture
         Me.Opcion6.Checked = True
         Me.Opcion6.CheckState = System.Windows.Forms.CheckState.Checked
         Me.Opcion6.Name = "Opcion6"
-        Me.Opcion6.Size = New System.Drawing.Size(211, 30)
+        Me.Opcion6.Size = New System.Drawing.Size(107, 30)
         Me.Opcion6.Text = "6"
         '
         'BorrarCapturasToolStripMenuItem
         '
         Me.BorrarCapturasToolStripMenuItem.Name = "BorrarCapturasToolStripMenuItem"
-        Me.BorrarCapturasToolStripMenuItem.Size = New System.Drawing.Size(220, 30)
+        Me.BorrarCapturasToolStripMenuItem.Size = New System.Drawing.Size(266, 30)
         Me.BorrarCapturasToolStripMenuItem.Text = "Borrar Capturas"
         '
         'ntyCapturadorPantalla
@@ -116,6 +117,12 @@ Partial Class frmScreenCapture
         Me.ListView1.Size = New System.Drawing.Size(824, 730)
         Me.ListView1.TabIndex = 3
         Me.ListView1.UseCompatibleStateImageBehavior = False
+        '
+        'BorrarÚltimaCapturaToolStripMenuItem
+        '
+        Me.BorrarÚltimaCapturaToolStripMenuItem.Name = "BorrarÚltimaCapturaToolStripMenuItem"
+        Me.BorrarÚltimaCapturaToolStripMenuItem.Size = New System.Drawing.Size(266, 30)
+        Me.BorrarÚltimaCapturaToolStripMenuItem.Text = "Borrar última Captura"
         '
         'frmScreenCapture
         '
@@ -147,4 +154,5 @@ Partial Class frmScreenCapture
     Friend WithEvents ImágenesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Opcion4 As ToolStripMenuItem
     Friend WithEvents Opcion6 As ToolStripMenuItem
+    Friend WithEvents BorrarÚltimaCapturaToolStripMenuItem As ToolStripMenuItem
 End Class

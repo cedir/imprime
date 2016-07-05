@@ -55,8 +55,6 @@ Public Class ControladorCapturaDeImagenes
             imagen.indice = count
             imagen.nombre = count.ToString()
 
-            Me.reporte.listaImagenes.Add(imagen)
-
             Return imagen
 
         Catch ex As Exception
@@ -64,13 +62,21 @@ Public Class ControladorCapturaDeImagenes
             eH.logError(ex)
         End Try
 
+        Return Nothing
     End Function
+
+    Public Sub BorrarUltimaCaptura(ui As frmScreenCapture)
+        Me.reporte.BorrarUltimaImagen()
+        ui.BorrarUltimaImagen()
+    End Sub
+
 
     Public Sub Procesar(ui As frmScreenCapture)
 
         If Not Me.reporte.Completo Then
             Dim imagen As Imagen = NuevaCaptura()
 
+            Me.reporte.listaImagenes.Add(imagen)
             ui.AgregaImagen(imagen)
             ControladorAvisoSonoro.EmitirSonido(Me.reporte.Advertir)
             If Me.reporte.Completo Then

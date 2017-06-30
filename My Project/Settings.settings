@@ -6,10 +6,10 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="pathCapturas" Type="System.String" Scope="User">
-      <Value Profile="(Default)">I:\CAPTURAS </Value>
+      <Value Profile="(Default)">I:\CAPTURAS\</Value>
     </Setting>
     <Setting Name="pathSonidoCapturas" Type="System.String" Scope="User">
-      <Value Profile="(Default)">I:\SONIDOS</Value>
+      <Value Profile="(Default)">I:\SONIDOS\</Value>
     </Setting>
   </Settings>
 </SettingsFile>

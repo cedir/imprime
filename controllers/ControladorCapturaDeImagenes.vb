@@ -1,5 +1,7 @@
 Public Class ControladorCapturaDeImagenes
+
     Private m_reporte As Reporte
+    Dim notifications As New List(Of frmNotification)
     Public Property reporte() As Reporte
         Get
             Return m_reporte
@@ -78,6 +80,10 @@ Public Class ControladorCapturaDeImagenes
 
             Me.reporte.listaImagenes.Add(imagen)
             ui.AgregaImagen(imagen)
+            ui.NotifyIcon1.Icon = SystemIcons.Application
+
+            ShowNotification(imagen.indice.ToString())
+
             ControladorAvisoSonoro.EmitirSonido(Me.reporte.Advertir)
             If Me.reporte.Completo Then
                 Me.GuardarCapturaEnDisco()
@@ -87,6 +93,16 @@ Public Class ControladorCapturaDeImagenes
             End If
         End If
 
+    End Sub
+
+    Public Sub ShowNotification(index As String)
+        Dim toastNotification As frmNotification = New frmNotification("Capturas", index, -1, FormAnimations.AnimationMethod.Slide, FormAnimations.AnimationDirection.Up)
+        Dim item As frmNotification
+        For Each item In notifications
+            item.Close()
+        Next
+        toastNotification.Show()
+        notifications.Add(toastNotification)
     End Sub
 
 End Class

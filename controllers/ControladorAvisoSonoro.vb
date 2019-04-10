@@ -12,11 +12,11 @@ Public Class ControladorAvisoSonoro
     Public Shared Sub EmitirSonido(ByVal advertir As Boolean)
         If advertir Then
             If IO.File.Exists(My.Settings.pathSonidoCapturas & SONIDO_IMPRESIONCOMPLETA) Then
-                My.Computer.Audio.Play(My.Settings.pathSonidoCapturas & SONIDO_IMPRESIONCOMPLETA, AudioPlayMode.BackgroundLoop)
+                My.Computer.Audio.Play(My.Settings.pathSonidoCapturas & SONIDO_IMPRESIONCOMPLETA, AudioPlayMode.Background)
             End If
         Else
             If IO.File.Exists(My.Settings.pathSonidoCapturas & SONIDO_CAPTURA) Then
-                My.Computer.Audio.Play(My.Settings.pathSonidoCapturas & SONIDO_CAPTURA, AudioPlayMode.BackgroundLoop)
+                My.Computer.Audio.Play(My.Settings.pathSonidoCapturas & SONIDO_CAPTURA, AudioPlayMode.Background)
             End If
         End If
     End Sub

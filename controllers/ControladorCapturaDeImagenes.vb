@@ -22,6 +22,7 @@ Public Class ControladorCapturaDeImagenes
     End Function
     Public Sub ReiniciarCapturas(ui As frmScreenCapture)
         ReiniciarCapturas(ui, Me.reporte.imagenes)
+        ShowNotification(Me.reporte.listaImagenes.Count.ToString())
     End Sub
 
     Public Sub ReiniciarCapturas(ui As frmScreenCapture, imagenes As Integer)
@@ -70,6 +71,7 @@ Public Class ControladorCapturaDeImagenes
     Public Sub BorrarUltimaCaptura(ui As frmScreenCapture)
         Me.reporte.BorrarUltimaImagen()
         ui.BorrarUltimaImagen()
+        ShowNotification(Me.reporte.listaImagenes.Count.ToString())
     End Sub
 
 

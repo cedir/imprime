@@ -2,7 +2,8 @@
 
 ## Path de instalacion
 - Para ver carpeta de instalación, abrir los procesos, dentro de la solapa “Procesos”, botón derecho sobre el proceso de cedir.exe, elegir opción “Abrir ubicación del archivo”
-Si estas en windows XP, esta dentro de la carpeta C:\Documents and Settings\username\LocalSettings\Apps\2.0\obfuscatedfoldername\obfuscatedfoldername
+Si estas en windows XP, esta dentro de la carpeta `C:\Documents and Settings\username\LocalSettings\Apps\2.0\XGAHSGSAAHAJ`
+NOTA: puede haber varias carpetas con el nombre `XBASGASDASXXX` (por ej), ver cual tiene mas carpetas dentro, y ubicar ahi una carpeta llamada `imprime......`
 Si con esto no es sufciente para encontrar la carpeta de instalacion, buscar en google con “click once intallation path” o con esto lo resolvi: https://stackoverflow.com/questions/2359026/how-to-get-folder-path-for-clickonce-application 
 - Versiones de CR para cada version de VS: https://www.tektutorialshub.com/download-crystal-reports-for-visual-studio/
 - Este link te habla de las diferentes versiones y es donde dice que la ultima version de service pack con libreria version 13.0.2000.0 es la sp20: https://wiki.scn.sap.com/wiki/display/BOBJ/Crystal+Reports%2C+Developer+for+Visual+Studio+Downloads
